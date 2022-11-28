@@ -22,17 +22,30 @@ def ProgramOne():
 # второй и предпоследний и т.д.
 
 def ProgramTwo():
-    list = [1, 2, 3, 4, 5, 6]
-    lastIndex = len(list) - 1
-    couplesList = []
-    resultList = [None] * int(len(list) / 2)
-    for i in range(int(len(list) / 2)):
-        resultList[i] = list[i] * list[lastIndex]
-        coupleNum = f'{list[i]} * {list[lastIndex]}'
-        couplesList.append(coupleNum)
-        lastIndex -= 1
-    print(f'Пары произведений = {couplesList}')
-    print(f'Результаты вычислений = {resultList}')
+    def ProgramTwo():
+    list1 = [2, 3, 4, 5, 6]
+    list2 = [2, 3, 5, 6]
+    
+    def calculateMultiplication(list):
+        lastIndex = len(list) - 1
+        couplesList = []
+        if len(list) % 2 == 0:
+            countIterations = int(len(list) / 2)
+        else:
+            countIterations = int((len(list) / 2) + 1)
+        resultList = [None] * countIterations
+        for i in range(countIterations):
+            resultList[i] = list[i] * list[lastIndex]
+            coupleNum = f'{list[i]} * {list[lastIndex]}'
+            couplesList.append(coupleNum)
+            lastIndex -= 1
+        print(f'Пары произведений = {couplesList}')
+        print(f'Результаты вычислений = {resultList}')
+        
+    print(f'Пример 1 {list1}')
+    calculateMultiplication(list1)
+    print(f'Пример 2 {list2}')
+    calculateMultiplication(list2)
     MainProgram()
 
 
